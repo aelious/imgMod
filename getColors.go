@@ -8,7 +8,7 @@ import (
 )
 
 func GetColors() {
-	reader, err := os.Open("image.png")
+	reader, err := os.Open("downloaded_image.png")
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return

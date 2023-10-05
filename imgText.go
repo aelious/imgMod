@@ -22,7 +22,7 @@ func CreatePicText() {
 		panic(err)
 	}
 
-	dc := gg.NewContext(W, H)
+	dc := gg.LoadImage("downloaded_image.png")
 
 	if err := dc.LoadFontFace(tempFile.Name(), 72); err != nil {
 		panic(err)
