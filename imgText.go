@@ -24,6 +24,10 @@ func CreatePicText() {
 	if err != nil {
 		panic(err)
 	}
+	// Get image bounds
+	bounds := dc.Bounds()
+	// Assign bounds to W and H
+	W, H := bounds.Max.X, bounds.Max.Y
 
 	if err := dc.LoadFontFace(tempFile.Name(), 72); err != nil {
 		panic(err)
