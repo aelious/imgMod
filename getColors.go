@@ -52,5 +52,5 @@ func GetColors() {
 			}
 		}
 	}
-	fmt.Printf("File saved successfully.")
+	fmt.Printf("File saved successfully.\n")
 }
