@@ -24,6 +24,12 @@ func CreatePicText() {
 	if err != nil {
 		panic(err)
 	}
+
+	image, err := gg.NewContextForImage(dc)
+
+	if err != nil {
+		panic(err)
+	}
 	// Get image bounds
 	bounds := dc.Bounds()
 	// Assign bounds to W and H
@@ -33,12 +39,9 @@ func CreatePicText() {
 		panic(err)
 	}
 
-	dc.SetRGB(1, 1, 1)
-	dc.Clear()
+	image.SetRGB(.5, 0, 0)
+	image.DrawStringAnchored("Hello, world!", W/2, H/2, 0.5, 0.5)
+	image.Stroke()
 
-	dc.SetRGB(.5, 0, 0)
-	dc.DrawStringAnchored("Hello, world!", W/2, H/2, 0.5, 0.5)
-	dc.Stroke()
-
-	dc.SavePNG("hello.png")
+	image.SavePNG("hello.png")
 }
