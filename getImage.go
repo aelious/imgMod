@@ -41,5 +41,5 @@ func GetImage() {
 		return
 	}
 
-	fmt.Println("Image downloaded and saved as 'downloaded_image.png'")
+	fmt.Println("Image successfully downloaded and saved as 'downloaded_image.png'")
 }

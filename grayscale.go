@@ -9,7 +9,7 @@ import (
 )
 
 func ConvertToGrayScale() {
-	fmt.Println("Processing Grayscale.\nOpening Image: ")
+	fmt.Println("Processing Grayscale.\nOpening Image. . .")
 	// Open the original image
 	// MAKE SURE THE ORIGINAL IMAGE IS A PNG, WILL NOT WORK WITH
 	// CONVERSIONS FM JPG, ETC
@@ -62,5 +62,5 @@ func ConvertToGrayScale() {
 	defer grayFile.Close()
 	png.Encode(grayFile, grayImg)
 
-	fmt.Println("Grayscale image saved.")
+	fmt.Println("Grayscale image saved successfully.")
 }

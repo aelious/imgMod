@@ -1,6 +1,7 @@
 package imgMod
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/fogleman/gg"
@@ -8,7 +9,7 @@ import (
 )
 
 func CreatePicText() {
-
+	fmt.Printf("Processing image text.\nOpening image. . .\n")
 	// Create a temporary file and write the byte slice to it
 	tempFile, err := os.CreateTemp("", "font-*.ttf")
 	if err != nil {
@@ -23,6 +24,8 @@ func CreatePicText() {
 	dc, err := gg.LoadPNG("downloaded_image.png")
 	if err != nil {
 		panic(err)
+	} else {
+		fmt.Print("Image opened successfully.\n")
 	}
 
 	image := gg.NewContextForImage(dc)
@@ -35,10 +38,11 @@ func CreatePicText() {
 	if err := image.LoadFontFace(tempFile.Name(), 72); err != nil {
 		panic(err)
 	}
-
+	fmt.Printf("Writing text to image.\n")
 	image.SetRGB(.5, 0, 0)
 	image.DrawStringAnchored("Hello, world!", float64(W/2), float64(H/2), 0.5, 0.5)
 	image.Stroke()
-
+	fmt.Printf("Saving file as hello.png\n")
 	image.SavePNG("hello.png")
+	fmt.Printf("Image text saved successfully.\n")
 }
