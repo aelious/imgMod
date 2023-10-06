@@ -8,8 +8,6 @@ import (
 )
 
 func CreatePicText() {
-	const W = 500
-	const H = 300
 
 	// Create a temporary file and write the byte slice to it
 	tempFile, err := os.CreateTemp("", "font-*.ttf")
@@ -22,7 +20,10 @@ func CreatePicText() {
 		panic(err)
 	}
 
-	dc := gg.LoadImage("downloaded_image.png")
+	dc, err := gg.LoadPNG("downloaded_image.png")
+	if err != nil {
+		panic(err)
+	}
 
 	if err := dc.LoadFontFace(tempFile.Name(), 72); err != nil {
 		panic(err)
