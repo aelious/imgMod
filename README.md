@@ -15,6 +15,6 @@ Create 4 different go files to import using the go get command.
 
 To use this package, inside the directory you wish to download them into run:
 
-(ENSURE YOU HAVE A GO.MOD FILE FIRST)
+(ENSURE YOU HAVE A .MOD FILE FIRST)
 
 go get -u github.com/aelious/imgMod
